@@ -1,16 +1,10 @@
   # Object-Oriented JavaScript
-  <br/>
 
   ## 1. Objects in Depth
-  <hr />
-  <br/>
 
   ### 1.1 Introduction
-  <hr />
-  <br/>
 
-  #### Arrays
-  <hr />
+  #### 1.1.1. Arrays
   At its core, an array is just an ordered collection of elements, enclosed by square brackets (i.e., [ and ]). Here s a variable called myArray, which is assigned to an empty array:<br/><br/>
 
   ```const myArray = [];```
@@ -18,9 +12,9 @@
 
   Each element in an array is referenced by a numeric key called an index, which starts from zero and increments by one for each additional element in the array. Check out the following example:
 
-  <code>const fruits = ['apple', 'banana', 'orange', 'grape', 'lychee'];<br/>
-  console.log(fruits);<br/>
-  // ['apple', 'banana', 'orange', 'grape', 'lychee'];</code>
+  ```const fruits = ['apple', 'banana', 'orange', 'grape', 'lychee'];
+  console.log(fruits);
+  // ['apple', 'banana', 'orange', 'grape', 'lychee'];```
   <br/><br/>
 
   If we want to retrieve the first (left-most) element in fruits, we access that element by its index:
@@ -35,7 +29,7 @@
   // 'lychee'</code>
   <br/><br/>
 
-#### Objects
+#### 1.1.2. Objects
  <hr />
   Fundamentally, an object is a collection of associated key/value pairs. We create an object with curly brackets (i.e., { and }). Here s a variable called myObject, which is assigned to an empty object:
 
@@ -68,7 +62,7 @@
   };</code>
   <br/><br/>
 
-  #### Object property syntax
+  #### 1.1.3. Object property syntax
   <hr />
   Another thing to note is that keys (i.e., the names of the object s properties) are strings, but quotation marks surrounding these strings are optional as long as the string is also a valid Javascript identifier (i.e., you could use it as a variable name or function name). 
   As a result, the following three objects are equivalent:
@@ -84,8 +78,7 @@
 
   For the exact rules for property names, feel free to check out the links at the end of this section.<br/><br/>
 
-  #### JavaScript Objects Might Look Familiar
-  <hr/>
+  #### 1.1.4. JavaScript Objects Might Look Familiar
   If you ve had past experience with Python or Ruby, objects are quite similar to dictionaries and hashes (respectively). Though they may look the same, there are key differences to be mindful of.
 
   First, Ruby hashes and JavaScript objects have similar functionality: they are both collections of values accessible by keys. However, values are accessed in Ruby hashes a bit differently. Consider the following Ruby hash:
@@ -132,8 +125,7 @@
   | Indexed | Key-value pairs | 
   <br/>
 
-  #### Accessing object properties
-  <hr/>
+  #### 1.1.5. Accessing object properties
   So now that we know what objects look like, how do we retrieve information from them? In other words: how do we access their values? There are two ways: dot notation and square bracket notation. Consider this bicycle object:
 
   <code>const bicycle = {<br/>
@@ -166,8 +158,7 @@
   Again, both expressions are equivalent, and will each return 8.
   <br/><br/>
 
-  #### Dot notation limitation
-  <hr/>
+  #### 1.1.6. Dot notation limitation
   Note that while dot notation may be easier to read and write, it can t be used in every situation. For example, let s say there s a key in the above bicycle object that is a number. An expression like bicycle.1 will cause a error, while bicycle[1] returns the intended value:
 
   <code>bicycle.1;<br/>
@@ -193,8 +184,7 @@
   It may seem odd, but recall that all property keys in a JavaScript object are strings, even if the quotation marks are omitted. With dot notation, the JavaScript interpreter looks for a key within bicycle whose value is 'myVariable'. Since there isn t such a key defined in the object, the expression returns undefined.
   <br/><br/>
 
-  #### Summary
-  <hr/>
+  #### 1.1.7. Summary
   In JavaScript, an object is an unordered collection of properties. Each property consists of a 
   key/value pair, and can reference either a primitive (e.g., strings, numbers, booleans, etc.) 
   or another object. Unlike elements in an array, which are accessed by a numeric index, properties 
@@ -206,9 +196,7 @@
   altogether? We ll answer all this and more in the very next section!
   <br/><br/>
 
-  #### Further Research
-  <hr/>
-
+  #### 1.1.8. Further Research
   - Intro to JavaScript: https://www.udacity.com/course/intro-to-javascript--ud803
   - Unquoted property names / object keys in JavaScript: https://mathiasbynens.be/notes/javascript-properties
   - Valid JavaScript variable names in ECMAScript 5: https://mathiasbynens.be/notes/javascript-identifiers
@@ -216,11 +204,8 @@
   <br/><br/>
 
   ### 1.2. Create and modify properties
-  <hr/>
-  <br/>
 
-  #### Creating Objects
-  <hr/>
+  #### 1.2.1. Creating Objects
   To create a new, blank (i.e., “empty”) object, you can use object literal notation, or the Object() constructor function. If you re not familiar with constructor functions, no need to worry! We'll jump into them in-depth in Lesson 3. For now, just know that the following two expressions are 
   equivalent:<br/><br/>
 
@@ -237,8 +222,7 @@
   **The recommended way to create objects in JS is literal notation.**
   <br/><br/>
 
-  #### Modifying Properties
-  <hr/>
+  #### 1.2.2. Modifying Properties
   Keep in mind that data within objects are mutable, meaning that data can be changed. There are 
   a few exceptions to this, but for now, let s see how we can modify/reassign existing properties 
   in an object.<br/><br/>
@@ -282,8 +266,7 @@
   };</code>
   <br/><br/>
 
-  #### Adding Properties
-  <hr/>
+  #### 1.2.3. Adding Properties
   Properties can be added to objects simply by specifying the property name, then giving it a value. Let s start off with a blank object, then add two properties:
 
   <code>const printer = {};<br/>
@@ -312,8 +295,7 @@
   }</code>
   <br/><br/>
 
-  #### Removing Properties
-  <hr/>
+  #### 1.2.4. Removing Properties
   Recall that since objects are mutable, not only can we modify existing properties (or even add new ones) -- we can also delete properties from objects.<br/><br/>
 
   Say that the printer object above actually doesn t have any modes (i.e., 'black and white', 'color', etc.). We can go ahead and remove that property from printer using the delete operator.
@@ -333,8 +315,7 @@
   - Salvo pocas excepciones, las propiedades de los objetos son mutables.
   - Se puede agregar propiedades a los objetos con dot ay bracket notation.
 
-  #### Exercises
-  <hr/>  
+  #### 1.2.5. Exercises
   Write an expression to delete the numWindows property from house.
 
   <code>let house = {<br/>
@@ -357,11 +338,9 @@
 
   ```house.hasGarage = true;```
 
-  #### Passing Arguments
-  <hr/>
+  #### 1.2.6. Passing Arguments
 
-  #### Passing a Primitive
-  <hr/>
+  #### 1.2.6.1. Passing a Primitive
   In JavaScript, a primitive (e.g., a string, number, boolean, etc.) is immutable. In other words, any changes made to an argument inside a function effectively creates a copy local to that function, and does not affect the primitive outside 
   of that function. Check out the following example: <br/><br/>
 
@@ -397,8 +376,7 @@
   changeToEight(n);<br/>
   console.log(n);  // { number: 7, numero: 8 }</code>
 
-  #### Passing an Object
-  <hr/>
+  #### 1.2.6.2. Passing an Object
   On the other hand, objects in JavaScript are mutable. If you pass an object into a function, Javascript passes a reference to that object. Let s see what happens if we pass an object into a function and then modify a property:
 
   <code>let originalObject = {<br/>
@@ -451,8 +429,7 @@
   Since objects are passed by reference, making changes to the copy (iceCreamCopy) has a direct effect on the original object (iceCreamOriginal) as well. In both objects, the value of the Richard property is now 99.
   <br/><br/>
 
-  #### Comparing an Object with Another Object
-  <hr/>
+  #### 1.2.7. Comparing an Object with Another Object
   On the topic of references, let s see what happens when we compare one object with another object. The following objects, parrot and pigeon, have the same methods and properties:
 
   <code>const parrot = {<br/>
@@ -549,8 +526,7 @@
   // 450</code>
   <br/><br/>
 
-  #### Summary
-  <hr/>
+  #### 1.2.8. Summary
   Objects are commonly created with literal notation, and can include properties that point to functions called methods. Methods are accessed the same way as other properties of objects, and can be invoked the same way as regular functions, except they automatically have access to the other properties of their parent object.<br/>
 
   By default, objects are mutable (with a few exceptions), so data within them can be altered. <br/>
@@ -560,14 +536,12 @@
   We ve modified objects quite a bit in this section, and even added new methods into them. In the very next section, we ll take a closer look at invoking these methods, as well as how these methods can directly access and modify an object itself!
   <br/><br/>
 
-  #### Further Research
-  <hr/>
-
+  #### 1.2.9. Further Research
+  
   - The 'delete' operator on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
   <br/><br/>
 
   ### 1.3. Functions vs. Methods
-  <hr/>
   At this point, we ve mostly seen objects with properties that behave more like attributes. 
   That is, properties such as color or type are data that describe an object, but they don't "do" anything. We can extend functionality to objects by adding methods to them.<br/>
 
@@ -605,8 +579,7 @@
   So now that a sayHello property has been defined, how do we go about calling (i.e., invoking) its referenced function?
   <br/><br/>
 
-  #### Calling Methods
-  <hr/>
+  #### 1.3.1. Calling Methods
   We can access a function in an object using the property name. Again, another name for a function property of an object is a method. We can access it the same way that 
   we do with other properties: by using dot notation or square bracket notation. Let's take a look back at the updated developer object above, then invoke its sayHello() method:
 
@@ -626,8 +599,7 @@
   Just like calling a function, an object s method is called by adding parentheses at the end of the method s name. Note that both dot notation and square bracket notation return the same result!
   <br/><br/>
 
-  #### Passing Arguments Into Methods
-  <hr/>
+  #### 1.3.2. Passing Arguments Into Methods
   If the method takes arguments, you can proceed the same way, too:
 
   <code>const developer = {<br/>
@@ -667,9 +639,8 @@
   bell.ring();</code>
 
 
-  #### Call Methods by Property Name
-  <hr/>
-  We ve been using anonymous functions (i.e., functions without a name) for object methods. However, naming those functions is still valid JavaScript syntax. Consider the following object, greeter:
+  #### 1.3.3. Call Methods by Property Name
+  We've been using anonymous functions (i.e., functions without a name) for object methods. However, naming those functions is still valid JavaScript syntax. Consider the following object, greeter:
 
   <code>const greeter = {<br/>
     greet: function sayHello() {<br/>
@@ -685,8 +656,7 @@
   Named functions are great for a smoother debugging experience, since those functions will have a useful name to display in stack traces. They re completely optional, however, and you ll often read code written by developers who prefer one way or the other.
   <br/><br/>
 
-  #### A Method Can Access the Object it was Called On
-  <hr/>
+  #### 1.3.4. A Method Can Access the Object it was Called On
   Recall that an object can contain data and the means to manipulate that data. But just how can an object reference its own properties, much less manipulate some of those properties itself? This is all possible with the this keyword!
 
   Using this, methods can directly access the object that it is called on. Consider the following object, triangle:
@@ -727,8 +697,7 @@
 
   tree.growOneFoot();</code>
 
-  #### Exercises
-  <hr/>
+  #### 1.3.4. Exercises
   Create an object called 'chameleon' with two properties:<br/>
   1. 'color', whose value is initially set to 'green' or 'pink'<br/>
   2. 'changeColor', a function which changes 'chameleon''s 'color' to 'pink'<br/>
@@ -749,13 +718,11 @@
   <br/><br/>
 
   
-  #### The value of this
-  <hr/>
+  #### 1.3.5. The value of this
   Depending on how a function is called, this can be set to different values! Later in this course, we ll take a deep dive into different ways that functions can be invoked, and how each approach influences the value of this.
   <br/><br/>
 
-  #### Summary
-  <hr/>
+  #### 1.3.6. Summary
   A method is a function property of an object. It is accessed the same way as any other property of the object (i.e., using dot notation or square bracket notation), and is invoked the same way as a regular function outside of an object (i.e., adding parentheses to the end of the expression).<br/><br/>
 
   Since an object is a collection of data and the means to operate on that data, a method can access the object it was called on using the special this keyword. The value of this 
@@ -765,21 +732,15 @@
   We ve spent a bit of time on this inside objects, but did you know that the value of this can have different meanings outside an object? In the next section, we ll take a close look at globals, their relationship with this, and the implications of using them.
   <br/><br/>
 
-  #### Further Research
-  <hr/>
-
+  #### 1.3.7. Further Research
   - Defining Methods on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#Defining_methods
 
   - 'this' in Methods: https://javascript.info/object-methods#this-in-methods
   <br/><br/>
 
   ### 1.4. Beware of Globals
-  <hr/>
-  <br/>
 
-  #### Things that Belong to Objects
-  <hr/>
-
+  #### 1.4.1. Things that Belong to Objects
   Previously, we saw that the properties and methods contained inside an object belong to that object. Let s drive this home with one quick example:
 
   <code>const chameleon = {<br/>
@@ -808,15 +769,12 @@
   }<br/>
   whoThis();</code>
 
-  #### Write your thoughts below.
-  <hr/>
-
+  #### 1.4.2. Write your thoughts below
   What do you think will be the value of this inside the following code? Window object<br/>
   What does the above expression output? Undefined
   <br/><br/>
 
-  #### this and Function Invocation
-  <hr/>
+  #### 1.4.3. this and Function Invocation
   Let s compare the code from the chameleon object with the whoThis() code.
 
   <code>const chameleon = {<br/>
@@ -833,9 +791,7 @@
   whoThis();</code>
   <br/><br/>
 
-  #### this in the Function/Method
-  <hr/>
-
+  #### 1.4.4. this in the Function/Method
   Before we dive into how this all works, take a look at the use of this inside 
   both of these code snippets:
 
@@ -851,8 +807,7 @@
   So, in both of these cases, the use of this is virtually identical.
   <br/><br/>
 
-  #### Compare the Structures of the Function/Method
-  <hr/>
+  #### 1.4.5. Compare the Structures of the Function/Method
   Now, I want you to pay attention to the differences in structure of how the two snippets of code are invoked. The lookAround() code is a method because it belongs to an object. Since it s a method, it s invoked as a property on the chameleon object:
 
   ```chameleon.lookAround();```
@@ -865,8 +820,7 @@
   Just like every normal function is invoked; it's just the name of the function and the parentheses (there s no object and no dot in front of it).
   <br/><br/>
 
-  #### this and Invocation
-  <hr/>
+  #### 1.4.6. this and Invocation
   How the function is invoked determines the value of this inside the function. ← That 
   sentence is really important, so read that two more times...we ll wait!<br/><br/>
 
@@ -889,9 +843,7 @@
   Let's see it all in action!
   <br/><br/>
 
-  #### The window Object
-  <hr/>
-
+  #### 1.4.7. The window Object
   If you haven't worked with the window object yet, this object is provided by the browser environment and is globally accessible to your JavaScript code using the identifier, window. 
   This object is not part of the JavaScript specification (i.e., ECMAScript); instead, it is developed by the W3C.
 
@@ -915,9 +867,7 @@
   What does you think this refers to in the code above? The window object
   <br/><br/>
 
-  #### Global Variables are Properties on window
-  <hr/>
-
+  #### 1.4.8. Global Variables are Properties on window
   Since the window object is at the highest (i.e., global) level, an interesting thing happens with global variable declarations. Every variable declaration that is made at 
   the global level (outside of a function) automatically becomes a property on the window object!<br/>
 
@@ -928,8 +878,7 @@
   // true</code>
   <br/><br/>
 
-  #### Globals and var, let, and const
-  <hr/>
+  #### 1.4.9. Globals and var, let, and const
   The keywords var, let, and const are used to declare variables in JavaScript. var has been around since the beginning of the language, while let and const are significantly newer additions (added in ES6).
 
   Only declaring variables with the var keyword will add them to the window object. If you declare a variable outside of a function with either let or const, it will not be added as 
@@ -940,8 +889,7 @@
   // false!</code>
   <br/><br/>
 
-  #### Global Functions are Methods on window
-  <hr/>
+  #### 1.4.10. Global Functions are Methods on window
   Similarly to how global variables are accessible as properties on the window object, any global function declarations are accessible on the window object as methods:
 
   <code>function learnSomethingNew() {<br/>
@@ -967,8 +915,7 @@
   consume(3);</code>
   <br/><br/>
 
-  #### Avoid Globals
-  <hr/>
+  #### 1.4.11. Avoid Globals
   We ve seen that declaring global variables and functions add them as properties to the window object. Globally-accessible code sounds like something that might be super helpful, right? I mean, wouldn t it be great if you could always be within arms reach of some ice cream (or is that just my lifelong dream)?<br/><br/>
 
   Counterintuitively, though, global variables and functions are not ideal. There are actually a number of reasons why, but the two we ll look at are:
@@ -976,8 +923,7 @@
   - Name collisions
   <br/><br/>
 
-  #### Tight Coupling
-  <hr/>
+  #### 1.4.12. Tight Coupling
   Tight coupling is a phrase that developers use to indicate code that is too dependent on the details of each other. The word "coupling" means the "pairing of two items together.
   " In tight coupling, pieces of code are joined together in a way where changing one unintentionally alters the functioning of some other code:
 
@@ -992,8 +938,7 @@
   This is a (simple) example of tightly-coupled code.
   <br/><br/>
 
-  #### Name Collisions
-  <hr/>
+  #### 1.4.13. Name Collisions
   A name collision occurs when two (or more) functions depend on a variable with the same name. A major problem with this is that both functions will try to update the variable and or set the variable, but these changes are overridden by each other!
 
   Let s look at an example of name collision with this DOM manipulation code:
@@ -1039,8 +984,7 @@
   Write your variables inside of the functions that need them, keeping them as close to where they are needed as possible. Now, there are times when you ll need to write global variables, but you should only write them as a last resort.
   <br/><br/>
 
-  ### Summary
-  <hr/>
+  ### 1.4.14. Summary
   The window object is provided by the browser and is not part of the JavaScript language or specification. Any global variable declarations (i.e., those that use var) or global 
   function declarations are added as properties to this window object. Excessive use of global variables is not a good practice, and can cause unexpected problems to accurately-written code.
 
@@ -1048,9 +992,7 @@
   out how to extract these individual keys or values!
   <br/><br/>
 
-  #### Further Research
-  <hr/>
-
+  #### 1.4.15. Further Research
   - The window object on MDN: https://developer.mozilla.org/en-US/docs/Web/API/Window
   - The window specification on W3C: https://www.w3.org/TR/html5/browsers.html#the-window-object
   - Globals are Bad: http://wiki.c2.com/?GlobalVariablesAreBad
@@ -1059,11 +1001,8 @@
   <br/><br/>
 
   ### 1.5. Extracting Properties and Values
-  <hr/>
-  <br/>
 
-  #### Object Methods
-  <hr/>
+  #### 1.5.1. Object Methods
   Do you remember earlier when we used the Object() constructor function to create (i.e., instantiate) new objects with the new keyword?
 
   ```const myNewFancyObject = new Object();```
@@ -1104,9 +1043,7 @@
   </code>
   <br/><br/>
 
-  #### Object.keys() and Object.values()
-  <hr/>
-
+  #### 1.5.2. Object.keys() and Object.values()
   At its core, an object is just a collection of key/value pairs. What if we want to extract only the keys from an object? Say we have this object representing a real-life dictionary:
 
   <code>const dictionary = {<br/>
@@ -1133,9 +1070,7 @@
   // ['automobile', 'healthy snack', 'cute furry animal', 'best friend']</code>
   <br/><br/>
 
-  #### Support for Object.keys() and Object.values()
-  <hr/>
-
+  #### 1.5.3. Support for Object.keys() and Object.values()
   - Object.keys() has been around for quite a long time, so it is fully supported by every 
   browser.
   - Object.values(), on the other hand, is significantly newer. It was officially added to the language specification in 2017. However, just because it s been added to the specification, it necessarily doesn t mean your browser supports it yet!
@@ -1149,31 +1084,21 @@
   Object.values() will return the items in the same order as when using a for loop. They won't always be strings, because they can have nested objects.
   <br/><br/>
 
-  #### Summary
-  <hr/>
+  #### 1.5.4. Summary
   The Object() constructor function has access to several methods to aid in development. To extract property names and values from an object, we can use:
 
   - Object.keys() returns an array of a given object s own keys (property names). 
   - Object.values() returns an array of a given object s own values (property values).
   <br/><br/>
 
-  #### Further Research
-  <hr/>
-  
+  #### 1.5.5. Further Research
   - Object.keys() on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
-
   - Object.values() on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
-
   - Browser Compatibility: http://tokenposts.blogspot.com.au/2012/04/javascript-objectkeys-browser.html
   <br/><br/>
   
   ### 1.5. Summary
-  <hr/>
-  <br/>
   
-  #### Further Research
-  <hr/>
-  
+  #### 1.5.1. Further Research
   - JavaScript: The Good Parts by Douglas Crockford: http://javascript.crockford.com/
-  
   - JavaScript: The Good Parts via Goodreads: https://www.goodreads.com/book/show/2998152-javascript
