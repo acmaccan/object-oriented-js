@@ -7,16 +7,19 @@
   #### 1.1.1. Arrays
   At its core, an array is just an ordered collection of elements, enclosed by square brackets (i.e., [ and ]). Here s a variable called myArray, which is assigned to an empty array:<br/><br/>
 
-  ```const myArray = [];```
-  <br/><br/>
+  ```
+  const myArray = [];
+  ```
+  <br/>
 
   Each element in an array is referenced by a numeric key called an index, which starts from zero and increments by one for each additional element in the array. Check out the following example:
 
-  ```const fruits = ['apple', 'banana', 'orange', 'grape', 'lychee'];
+  ```
+  const fruits = ['apple', 'banana', 'orange', 'grape', 'lychee'];
   console.log(fruits);
   // ['apple', 'banana', 'orange', 'grape', 'lychee'];
   ```
-  <br/><br/>
+  <br/>
 
   If we want to retrieve the first (left-most) element in fruits, we access that element by its index:
 
