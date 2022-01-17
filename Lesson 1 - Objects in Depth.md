@@ -31,9 +31,10 @@
 
   Likewise, this is how we can access the last (right-most) element in fruits:
 
-  <code>fruits[4];
-  // 'lychee'</code>
-  <br/><br/>
+  ```fruits[4];
+  // 'lychee'
+  ```
+  <br/>
 
   #### 1.1.2. Objects
   Fundamentally, an object is a collection of associated key/value pairs. We create an object with curly brackets (i.e., { and }). Here s a variable called myObject, which is assigned to an empty object:
@@ -78,7 +79,7 @@
   As a result, the following three objects are equivalent:
 
   ```
-  const course = { courseId: 711 };   // ← no quotes around the courseId key
+  const course = { courseId: 711 };         // ← no quotes around the courseId key
   const course = { 'courseId': 711 };       // ← single quotes around the courseId key
   const course = { "courseId": 711 };       // ← double quotes around the courseId key
   ```
@@ -96,7 +97,7 @@
   First, Ruby hashes and JavaScript objects have similar functionality: they are both collections of values accessible by keys. However, values are accessed in Ruby hashes a bit differently. Consider the following Ruby hash:
 
   ```
-    book = {
+  book = {
     title: 'To Kill a Mockingbird',
     author: 'Harper Lee',
     published: 1960
@@ -118,7 +119,7 @@
   book.title
   #undefined method `title' for #<Hash> (NoMethodError)
   
-  <code>book['title']
+  book['title']
   #nil
   ```
   <br/>
@@ -127,15 +128,24 @@
 
   On the other hand, Python dictionaries have some similar functionality to objects in JavaScript as well, with some notable differences. For one, keys in Python dictionaries must be something hashable (e.g., a string, a number, a float, etc.). The following is a valid object in JavaScript:
 
-  ```const javascriptObject = { name: 'George Orwell', year: 1984 }```
+  ```
+  const javascriptObject = { name: 'George Orwell', year: 1984 }
+  ```
+  <br/>
 
   However, it would be invalid as a Python dictionary:
-  <code>python_dictionary = {name: 'George Orwell', year: 1984}<br/>
+  ```
+  python_dictionary = {name: 'George Orwell', year: 1984}
   #Traceback (most recent call last):
-  #NameError: name 'name' is not defined</code>
+  #NameError: name 'name' is not defined
+  ```
+  <br/>
 
   A quick fix would be to convert the Python dictionary s keys into strings:
-  ```my_dictionary = {'name': 'George Orwell', 'year': 1984}```
+  ```
+  my_dictionary = {'name': 'George Orwell', 'year': 1984}
+  ```
+  <br/>
 
   Above all else, you can also leverage objects in JavaScript not just to hold data, but for many powerful functionalities such as constructors. This is an object-oriented JavaScript course, so we ll take a deep dive into these features throughout this course!
 
@@ -149,32 +159,47 @@
   #### 1.1.5. Accessing object properties
   So now that we know what objects look like, how do we retrieve information from them? In other words: how do we access their values? There are two ways: dot notation and square bracket notation. Consider this bicycle object:
 
-  <code>const bicycle = {<br/>
-    color: 'blue',<br/>
-    type: 'mountain bike',<br/>
-    wheels: {<br/>
-      diameter: 18,<br/>
-      width: 8<br/>
-    }<br/>
-  };</code>
+  ```
+  const bicycle = {
+    color: 'blue',
+    type: 'mountain bike',
+    wheels: {
+      diameter: 18,
+      width: 8
+    }
+  };
+  ```
+  <br/>
 
   Using dot notation, we can access bicycle s color property by writing:
-  <code>bicycle.color;<br/>
-  // 'blue'</code>
+  ```
+  bicycle.color;
+  // 'blue'
+  ```
+  <br/>
 
   Similarly, we can access the same property using square bracket notation by writing:
-  <code>bicycle['color'];<br/>
-  // 'blue'</code>
+  ```
+  bicycle['color'];
+  // 'blue'
+  ```
+  <br/>
 
   Both expressions are equivalent, and will each return 'blue'.
 
   What about nested objects? To retrieve the value of the width property of the object contained within bicycle s wheels property, you can do the following with dot notation:
-  <code>bicycle.wheels.width;<br/>
-  // 8</code>
+  ```
+  bicycle.wheels.width;
+  // 8
+  ```
+  <br/>
 
   And with square bracket notation:
-  <code>bicycle['wheels']['width'];<br/>
-  // 8</code>
+  ```
+  bicycle['wheels']['width'];
+  // 8
+  ```
+  <br/>
 
   Again, both expressions are equivalent, and will each return 8.
   <br/><br/>
@@ -182,25 +207,33 @@
   #### 1.1.6. Dot notation limitation
   Note that while dot notation may be easier to read and write, it can t be used in every situation. For example, let s say there s a key in the above bicycle object that is a number. An expression like bicycle.1 will cause a error, while bicycle[1] returns the intended value:
 
-  <code>bicycle.1;<br/>
-  // Uncaught SyntaxError: Unexpected number</code>
+  ```
+  bicycle.1;
+  // Uncaught SyntaxError: Unexpected number
 
-  <code>bicycle[1];<br/>
-  // (returns the value of the `1` property)</code>
+  bicycle[1];
+  // (returns the value of the `1` property)
+  ```
+  <br/>
 
   Another issue is when variables are assigned to property names. Let s say we declare myVariable, and assign it to the string 'color':
 
-  ```const myVariable = 'color';```
+  ```
+  const myVariable = 'color';
+  ```
+  <br/>
 
   ```bicycle[myVariable]``` returns 'blue' because the variable myVariable gets substituted with its 
-  value (the string 'color') and ```bicycle['color']```'s value is 'blue'. However, ```bicycle.myVariable; ```
-  returns undefined:
+  value (the string 'color') and ```bicycle['color']```'s value is 'blue'. However, ```bicycle.myVariable;``` returns undefined:
 
-  <code>bicycle[myVariable];<br/>
-  // 'blue'</code>
-
-  <code>bicycle.myVariable;<br/>
-  // undefined</code>
+  ```
+  bicycle[myVariable];
+  // 'blue'
+  
+  bicycle.myVariable;
+  // undefined
+  ```
+  <br/>
 
   It may seem odd, but recall that all property keys in a JavaScript object are strings, even if the quotation marks are omitted. With dot notation, the JavaScript interpreter looks for a key within bicycle whose value is 'myVariable'. Since there isn t such a key defined in the object, the expression returns undefined.
   <br/><br/>
@@ -231,12 +264,16 @@
   equivalent:<br/><br/>
 
   Using literal notation:<br/>
-  ```const myObject = {};```
-  <br/><br/>
+  ```
+  const myObject = {};
+  ```
+  <br/>
 
   Using the Object() constructor function:<br/>
-  ```const myObject = new Object();```
-  <br/><br/>
+  ```
+  const myObject = new Object();
+  ```
+  <br/>
 
   While both methods ultimately return an object without properties of its own, the Object() constructor function is a bit slower and more verbose. As such, the recommended way to create new objects in JavaScript is to use literal notation.
 
@@ -250,87 +287,109 @@
 
   Consider the following cat object:
 
-  <code>const cat = {<br/>
-    age: 2,<br/>
-    name: 'Bailey',<br/>
-    meow: function () {<br/>
-      console.log('Meow!');<br/>
-    },<br/>
-    greet: function (name) {<br/>
-      console.log(`Hello ${name}`);<br/>
-    }<br/>
-  };</code>
-  <br/><br/>
+  ```
+  const cat = {
+    age: 2,
+    name: 'Bailey',
+    meow: function () {
+      console.log('Meow!');
+    },
+    greet: function (name) {
+      console.log(`Hello ${name}`);
+    }
+  };
+  ```
+  <br/>
 
   Now, let s go ahead change it up a bit!
 
-  <code>cat.age += 1;<br/>
-  cat.age;<br/>
-  // 3</code>
+  ```
+  cat.age += 1;
+  cat.age;
+  // 3
 
-  <code>cat.name = 'Bambi';<br/>
-  cat.name;<br/>
-  // 'Bambi'</code>
-  <br/><br/>
+  cat.name = 'Bambi';
+  cat.name;
+  // 'Bambi'
+  ```
+  <br/>
 
   After incrementing the value of the age property by 1, and reassigning name s value to 'Bambi', our cat object now looks like:
 
-  <code>{<br/>
-    age: 3,<br/>
-    name: 'Bambi',<br/>
-    meow: function () {<br/>
-      console.log('Meow!');<br/>
-    },<br/>
-    greet: function (name) {<br/>
-      console.log(`Hello ${name}`);<br/>
-    }<br/>
-  };</code>
-  <br/><br/>
+  ```
+  {
+    age: 3,
+    name: 'Bambi',
+    meow: function () {
+      console.log('Meow!');
+    },
+    greet: function (name) {
+      console.log(`Hello ${name}`);
+    }
+  };
+  ```
+  <br/>
 
   #### 1.2.3. Adding Properties
   Properties can be added to objects simply by specifying the property name, then giving it a value. Let s start off with a blank object, then add two properties:
 
-  <code>const printer = {};<br/>
-  printer.on = true;<br/>
-  printer.mode = 'black and white';</code>
+  ```
+  const printer = {};
+  printer.on = true;
+  printer.mode = 'black and white';
+  ```
+  <br/>
 
   The above example uses dot notation to add properties, but keep in mind that square bracket notation works just as well:
 
-  ```printer['remainingSheets'] = 168;```
+  ```
+  printer['remainingSheets'] = 168;
+  ```
+  <br/>
 
   Likewise, we can add a method to the printer object in a similar manner. This time, the value of the property is an anonymous (i.e., unnamed) function:
 
-  <code>printer.print = function () {<br/>
-    console.log('The printer is printing!');<br/>
-  };</code>
+  ```
+  printer.print = function () {
+    console.log('The printer is printing!');
+  };
+  ```
+  <br/>
 
   Great! The complete printer object now looks like the following:
 
-  <code>{<br/>
-    on: true,<br/>
-    mode: 'black and white',<br/>
-    remainingSheets: 168,<br/>
-    print: function () {<br/>
-      console.log('The printer is printing!');<br/>
-    }<br/>
-  }</code>
-  <br/><br/>
+  ```
+  {
+    on: true,
+    mode: 'black and white',
+    remainingSheets: 168,
+    print: function () {
+      console.log('The printer is printing!');
+    }
+  }
+  ```
+  <br/>
 
   #### 1.2.4. Removing Properties
   Recall that since objects are mutable, not only can we modify existing properties (or even add new ones) -- we can also delete properties from objects.<br/><br/>
 
   Say that the printer object above actually doesn t have any modes (i.e., 'black and white', 'color', etc.). We can go ahead and remove that property from printer using the delete operator.
 
-  <code>delete printer.mode;<br/>
-  // true</code>
+  ```
+  delete printer.mode;
+  // true
+  ```
+  <br/>
 
   Note that delete directly mutates the object at hand. If we try to access a deleted property, the JavaScript interpreter will no longer be able to find the mode property because the mode key (along with its value, true) have been deleted:
 
-  <code>printer.mode;<br/>
-  // undefined</code>
+  ```
+  printer.mode;
+  // undefined
+  ```
+  <br/>
 
   Great! Let s see this all in action below.
-
   - Al borrar una propiedad con delete, return true cuando borra exitosamente.
   - Si intentamos acceder a una propiedad borrada retornará undefined.
   - Salvo pocas excepciones, las propiedades de los objetos son mutables.
@@ -339,25 +398,31 @@
   #### 1.2.5. Exercises
   Write an expression to delete the numWindows property from house.
 
-  <code>let house = {<br/>
-    color: 'green',<br/>
-    numRooms: 4,<br/>
-    numWindows: 8,<br/>
-    forSale: false<br/>
-  };<br/><br/>
+  ```
+  let house = {
+    color: 'green',
+    numRooms: 4,
+    numWindows: 8,
+    forSale: false
+  };
 
-  delete house.numWindows<br/><br/>
+  delete house.numWindows
 
-  let house = {<br/>
-    color: 'green',<br/>
-    numRooms: 4,<br/>
-    forSale: false<br/>
-  };</code>
+  let house = {
+    color: 'green',
+    numRooms: 4,
+    forSale: false
+  };
+  ```
+  <br/>
 
   Write an expression to add a new hasGarage property to house. 
   Set the value of the hasGarage property to true.
 
-  ```house.hasGarage = true;```
+  ```
+  house.hasGarage = true;
+  ```
+  <br/>
 
   #### 1.2.6. Passing Arguments
 
@@ -365,53 +430,60 @@
   In JavaScript, a primitive (e.g., a string, number, boolean, etc.) is immutable. In other words, any changes made to an argument inside a function effectively creates a copy local to that function, and does not affect the primitive outside 
   of that function. Check out the following example: <br/><br/>
 
-  <code>function changeToEight(n) {<br/>
-    n = 8; // whatever n was, it is now 8... but only in this function!<br/>
-  };<br/>
-  let n = 7;<br/>
-  changeToEight(n);<br/>
-  console.log(n); // 7</code>
+  ```
+  function changeToEight(n) {
+    n = 8; // whatever n was, it is now 8... but only in this function!
+  };
+  let n = 7;
+  changeToEight(n);
+  console.log(n); // 7
+  ```
+  <br/>
 
-  ```changeToEight()``` takes in a single argument, n, and changes it to 8. However, this 
-  change only exists inside the function itself. We then pass the global variable n 
-  (which is assigned the value 7) into the function. After invoking it, n is still 
-  equal to 7.
+  ```changeToEight()``` takes in a single argument, n, and changes it to 8. However, this change only exists inside the function itself. We then pass the global variable n (which is assigned the value 7) into the function. After invoking it, n is still equal to 7.
 
   Atention: 
-
-  <code>let n = { number: 7 };<br/>
-  function changeToEight(n) {<br/>
-    n = {<br/>
-      numero: 8<br/>
-    };<br/>
-  };<br/>
-  changeToEight(n);<br/>
-  console.log(n); // { number: 7 }</code>
+  ```
+  let n = { number: 7 };
+  function changeToEight(n) {
+    n = {
+      numero: 8
+    };
+  };
+  changeToEight(n);
+  console.log(n); // { number: 7 }
+  ```
+  <br/>
 
   Now:
-
-  <code>var n = { number: 7 };<br/>
-  function changeToEight(n) {<br/>
-      n.numero = 8<br/>
-  };<br/>
-  changeToEight(n);<br/>
-  console.log(n);  // { number: 7, numero: 8 }</code>
+  ```
+  var n = { number: 7 };
+  function changeToEight(n) {
+      n.numero = 8
+  };
+  changeToEight(n);
+  console.log(n);  // { number: 7, numero: 8 }
+  ```
+  <br/>
 
   #### 1.2.6.2. Passing an Object
   On the other hand, objects in JavaScript are mutable. If you pass an object into a function, Javascript passes a reference to that object. Let s see what happens if we pass an object into a function and then modify a property:
 
-  <code>let originalObject = {<br/>
-    favoriteColor: 'red'<br/>
-  };<br/><br/>
+  ```
+  let originalObject = {
+    favoriteColor: 'red'
+  };
 
-  function setToBlue(object) {<br/>
-    object.favoriteColor = 'blue';<br/>
-  }<br/><br/>
+  function setToBlue(object) {
+    object.favoriteColor = 'blue';
+  }
 
-  setToBlue(originalObject);<br/><br/>
+  setToBlue(originalObject);
 
-  originalObject.favoriteColor;<br/>
-  // 'blue'</code>
+  originalObject.favoriteColor;
+  // 'blue'
+  ```
+  <br/>
 
   In the above example, originalObject contains a single property, favoriteColor, which has a value of 'red'. We pass originalObject into the setToBlue() function and invoke it. After accessing originalObject s favoriteColor property, we see that the value is now 'blue'!<br/>
 
@@ -427,25 +499,34 @@
   Consider this iceCreamOriginal object, which shows the amount of ice cream cones each 
   instructor has eaten:
 
-  <code>const iceCreamOriginal = {<br/>
-    Andrew: 3,<br/>
-    Richard: 15<br/>
-  };</code>
+  ```
+  const iceCreamOriginal = {
+    Andrew: 3,
+    Richard: 15
+  };
+  ```
+  <br/>
 
   Let's go ahead and make assign a new variable to iceCreamOriginal. We ll then check the value of its Richard property:
 
-  <code>const iceCreamCopy = iceCreamOriginal;<br/>
-  iceCreamCopy.Richard;<br/>
-  // 15</code>
+  ```
+  const iceCreamCopy = iceCreamOriginal;
+  iceCreamCopy.Richard;
+  // 15
+  ```
+  <br/>
 
   As expected, the expression iceCreamCopy.Richard; returns 15 (i.e., it is the same value as the Richard property in iceCreamOriginal). Now, let s change the value in the copy, then check the results:
 
-  <code>iceCreamCopy.Richard = 99;<br/>
-  iceCreamCopy.Richard;<br/>
-  // 99<br/><br/>
+  ```
+  iceCreamCopy.Richard = 99;
+  iceCreamCopy.Richard;
+  // 99
 
-  iceCreamOriginal.Richard;<br/>
-  // 99</code>
+  iceCreamOriginal.Richard;
+  // 99
+  ```
+  <br/>
 
   Since objects are passed by reference, making changes to the copy (iceCreamCopy) has a direct effect on the original object (iceCreamOriginal) as well. In both objects, the value of the Richard property is now 99.
   <br/><br/>
@@ -453,43 +534,57 @@
   #### 1.2.7. Comparing an Object with Another Object
   On the topic of references, let s see what happens when we compare one object with another object. The following objects, parrot and pigeon, have the same methods and properties:
 
-  <code>const parrot = {<br/>
-    group: 'bird',<br/>
-    feathers: true,<br/>
-    chirp: function () {<br/>
-      console.log('Chirp chirp!');<br/>
-    }<br/>
-  };<br/><br/>
+  ```
+  const parrot = {
+    group: 'bird',
+    feathers: true,
+    chirp: function () {
+      console.log('Chirp chirp!');
+    }
+  };
 
-  const pigeon = {<br/>
-    group: 'bird',<br/>
-    feathers: true,<br/>
-    chirp: function () {<br/>
-      console.log('Chirp chirp!');<br/>
-    }<br/>
-  };</code>
+  const pigeon = {
+    group: 'bird',
+    feathers: true,
+    chirp: function () {
+      console.log('Chirp chirp!');
+    }
+  };
+  ```
+  <br/>
 
   Naturally, one might expect the parrot object and pigeon object to be equal. After all, both objects look exactly the same! Let s compare parrot and pigeon to find out:
 
-  <code>parrot === pigeon;<br/>
-  // false</code>
+  ```
+  parrot === pigeon;
+  // false
+  ```
+  <br/>
 
   What's going on here? As it turns out, the expression will only return true when comparing two references to exactly the same object. Using what we now know about passing objects, let's confirm this. To start off, let s create a new variable, myBird, and assign it to one of the objects above:
 
-  ```const myBird = parrot;```
+  ```
+  const myBird = parrot;
+  ```
+  <br/>
 
   As we ve just learned, myBird not only refers to the same object as parrot -- they are the same object! If we make any updates to myBird s properties, parrot s properties will be 
   updated with exactly the same changes as well. Now, the comparison will return true:
 
-  <code>myBird === parrot;<br/>
-  // true</code>
+  ```
+  myBird === parrot;
+  // true
+  ```
+  <br/>
 
   So since pigeon is not the same object as myBird or parrot, any comparisons between myBird 
   and pigeon will return false:
 
-  <code>myBird === pigeon;<br/>
-  // false</code>
-  <br/><br/>
+  ```
+  myBird === pigeon;
+  // false
+  ```
+  <br/>
 
   Inmutables:
   - 8
@@ -506,46 +601,53 @@
 
   Consider the following:
 
-  <code>let string = 'orange';<br/>
-  function changeToApple(string) {<br/>
-    string = 'apple';<br/>
-  }<br/>
+  ```
+  let string = 'orange';
+  function changeToApple(string) {
+    string = 'apple';
+  }
 
-  changeToApple(string);<br/>
+  changeToApple(string);
 
-  console.log(string);<br/>
-
-  // Orange</code>
-  <br/><br/>
+  console.log(string);
+  // Orange
+  ```
+  <br/>
 
   Now:
+  ```
+  let string = 'orange';
 
-  <code>let string = 'orange';<br/>
+  function changeToApple(string) {
+    string2 = 'apple';
+    return string;
+  }
 
-  function changeToApple(string) {<br/>
-    string2 = 'apple';<br/>
-    return string;<br/>
-  }<br/>
+  changeToApple(string);
 
-  changeToApple(string);<br/>
-
-  console.log(string2);<br/>
-  // apple</code>
-  <br/><br/>
+  console.log(string2);
+  // apple
+  ```
+  <br/>
+  
 
   Consider the following object, oven:
-
-  <code>const oven = {<br/>
-    type: 'clay',<br/>
-    temperature: 400<br/>
-  };</code>
+  ```
+  const oven = {
+    type: 'clay',
+    temperature: 400
+  };
+  ```
+  <br/>
 
   What is the value of oven's temperature property after the following operations?
 
-  <code>const newOven = oven;<br/>
-  newOven.temperature += 50; <br/>
-  // 450</code>
-  <br/><br/>
+  ```
+  const newOven = oven;
+  newOven.temperature += 50;
+  // 450
+  ```
+  <br/>
 
   #### 1.2.8. Summary
   Objects are commonly created with literal notation, and can include properties that point to functions called methods. Methods are accessed the same way as other properties of objects, and can be invoked the same way as regular functions, except they automatically have access to the other properties of their parent object.<br/>
@@ -568,34 +670,42 @@
 
   Say that we have a function, sayHello(), which simply logs a message to the console:
 
-  <code>function sayHello () {<br/>
-    console.log('Hi there!');<br/>
-  }</code>
-  <br/><br/>
+  ```
+  function sayHello () {
+    console.log('Hi there!');
+  }
+  ```
+  <br/>
 
   Now, say that we also have a developer object with a single property, name:
 
-  <code>const developer = {<br/>
-    name: 'Andrew'<br/>
-  };</code>
-  <br/><br/>
+  ```
+  const developer = {
+    name: 'Andrew'
+  };
+  ```
+  <br/>
 
   If we want to add the sayHello() function into the developer object, we can add the same way as we add other new properties: by providing property name, then giving it a value. This time, the value of the property is a function!<br/>
 
-  <code>developer.sayHello = function () {<br/>
-    console.log('Hi there!');<br/>
-  };</code>
-  <br/><br/>
+  ```
+  developer.sayHello = function () {
+    console.log('Hi there!');
+  };
+  ```
+  <br/>
 
   This is how the updated developer object looks:
 
-  <code>{<br/>
-    name: 'Andrew',<br/>
-    sayHello: function () {<br/>
-      console.log('Hi there!');<br/>
-    }<br/>
-  }</code>
-  <br/><br/>
+  ```
+  {
+    name: 'Andrew',
+    sayHello: function () {
+      console.log('Hi there!');
+    }
+  }
+  ```
+  <br/>
 
   So now that a sayHello property has been defined, how do we go about calling (i.e., invoking) its referenced function?
   <br/><br/>
@@ -604,18 +714,21 @@
   We can access a function in an object using the property name. Again, another name for a function property of an object is a method. We can access it the same way that 
   we do with other properties: by using dot notation or square bracket notation. Let's take a look back at the updated developer object above, then invoke its sayHello() method:
 
-  <code>const developer = {<br/>
-    name: 'Andrew',<br/>
-    sayHello: function () {<br/>
-      console.log('Hi there!');<br/>
-    }<br/>
-  };<br/><br/>
+  ```
+  const developer = {
+    name: 'Andrew',
+    sayHello: function () {
+      console.log('Hi there!');
+    }
+  };
 
-  developer.sayHello();<br/>
-  // 'Hi there!'<br/><br/>
+  developer.sayHello();
+  // 'Hi there!'
 
-  developer['sayHello']();<br/>
-  // 'Hi there!'</code>
+  developer['sayHello']();
+  // 'Hi there!'
+  ```
+  <br/>
 
   Just like calling a function, an object s method is called by adding parentheses at the end of the method s name. Note that both dot notation and square bracket notation return the same result!
   <br/><br/>
@@ -623,19 +736,21 @@
   #### 1.3.2. Passing Arguments Into Methods
   If the method takes arguments, you can proceed the same way, too:
 
-  <code>const developer = {<br/>
-    name: 'Andrew',<br/>
-    sayHello: function () {<br/>
-      console.log('Hi there!');<br/>
-    },<br/>
-    favoriteLanguage: function (language) {<br/>
-      console.log(`My favorite programming language is ${language}`);<br/>
-    }<br/>
-  };<br/><br/>
+  ```
+  const developer = {
+    name: 'Andrew',
+    sayHello: function () {
+      console.log('Hi there!');
+    },
+    favoriteLanguage: function (language) {
+      console.log(`My favorite programming language is ${language}`);
+    }
+  };
 
-  developer.favoriteLanguage('JavaScript');<br/>
-  // My favorite programming language is JavaScript</code>
-  <br/><br/>
+  developer.favoriteLanguage('JavaScript');
+  // My favorite programming language is JavaScript
+  ```
+  <br/>
 
   - Los métodos como las funciones, para invocarlas es necesario incluir () al final
   - Los métodos como las funciones, toman argumentos.
@@ -644,35 +759,44 @@
 
   Write an expression that invokes the alerter() function in the following array, myArray:
 
-  <code>const myArray = [ function alerter() { alert('Hello!'); } ];<br/>
-  myArray[0]();</code>
-  <br/><br/>
+  ```
+  const myArray = [ function alerter() { alert('Hello!'); } ];
+  myArray[0]();
+  ```
+  <br/>
 
   Write an expression that invokes the function referenced by the bell object s ring property:
 
-  <code>const bell = {<br/>
-    color: 'gold',<br/>
-    ring: function () {<br/>
-      console.log('Ring ring ring!');<br/>
-    }<br/>
-  };<br/><br/>
+  ```
+  const bell = {
+    color: 'gold',
+    ring: function () {
+      console.log('Ring ring ring!');
+    }
+  };
 
-  bell.ring();</code>
-
+  bell.ring();
+  ```
+  <br/>
 
   #### 1.3.3. Call Methods by Property Name
   We've been using anonymous functions (i.e., functions without a name) for object methods. However, naming those functions is still valid JavaScript syntax. Consider the following object, greeter:
 
-  <code>const greeter = {<br/>
-    greet: function sayHello() {<br/>
-      console.log('Hello!');<br/>
-    }<br/>
-  };</code>
+  ```
+  const greeter = {
+    greet: function sayHello() {
+      console.log('Hello!');
+    }
+  };
+  ```
 
   Note that the greet property points to a function with a name: sayHello. Whether this function is named or not, greet is invoked the same way:
 
-  <code>greeter.greet();<br/>
-  // 'Hello!'</code>
+  ```
+  greeter.greet();
+  // 'Hello!'
+  ```
+  <br/>
 
   Named functions are great for a smoother debugging experience, since those functions will have a useful name to display in stack traces. They re completely optional, however, and you ll often read code written by developers who prefer one way or the other.
   <br/><br/>
@@ -682,18 +806,23 @@
 
   Using this, methods can directly access the object that it is called on. Consider the following object, triangle:
 
-  <code>const triangle = {<br/>
-    type: 'scalene',<br/>
-    identify: function () {<br/>
-      console.log(`This is a ${this.type} triangle.`);<br/>
-    }<br/>
-  };</code>
-  <br/><br/>
+  ```
+  const triangle = {
+    type: 'scalene',
+    identify: function () {
+      console.log(`This is a ${this.type} triangle.`);
+    }
+  };
+  ```
+  <br/>
 
   Note that inside the identify() method, the value this is used. When you say this, what you re really saying is "this object" or "the object at hand." this is what gives the identify() method direct access to the triangle object s properties:
 
-  <code>triangle.identify();<br/>
-  // 'This is a scalene triangle.'</code>
+  ```
+  triangle.identify();
+  // 'This is a scalene triangle.'
+  ```
+  <br/>
 
   When the identify() method is called, the value of this is set to the object it was called on: triangle. As a result, the identify() method can access and use triangle s type property, as seen in the above console.log() expression.
 
@@ -706,17 +835,20 @@
 
   Let's make sure we re still on the same page! Write an expression that invokes the function referenced by the tree object s growOneFoot property:
 
-  <code>const tree = {<br/>
-    type: 'redwood',<br/>
-    leaves: 'green',<br/>
-    height: 80,<br/>
-    age: 15,<br/>
-    growOneFoot: function () {<br/>
-      this.height += 1;<br/>
-    }<br/>
-  };<br/><br/>
+  ```
+  const tree = {
+    type: 'redwood',
+    leaves: 'green',
+    height: 80,
+    age: 15,
+    growOneFoot: function () {
+      this.height += 1;
+    }
+  };
 
-  tree.growOneFoot();</code>
+  tree.growOneFoot();
+  ```
+  <br/>
 
   #### 1.3.4. Exercises
   Create an object called 'chameleon' with two properties:<br/>
@@ -724,19 +856,21 @@
   2. 'changeColor', a function which changes 'chameleon''s 'color' to 'pink'<br/>
   if it is 'green', or to 'green' if it is 'pink'.<br/><br/>
 
-  <code>const chameleon = {<br/>
-    color: 'pink',<br/>
-    changeColor: function () {<br/>
-        if(this.color == 'pink') {<br/>
-            this.color = 'green';<br/>
-        } else {<br/>
-            this.color = 'pink';<br/>
-        }<br/>
-    }<br/>
-  };<br/>
-  chameleon.changeColor();<br/>
-  console.log(chameleon.color);</code>
-  <br/><br/>
+  ```
+  const chameleon = {
+    color: 'pink',
+    changeColor: function () {
+        if(this.color == 'pink') {
+            this.color = 'green';
+        } else {
+            this.color = 'pink';
+        }
+    }
+  };
+  chameleon.changeColor();
+  console.log(chameleon.color);
+  ```
+  <br/>
 
   
   #### 1.3.5. The value of this
@@ -755,7 +889,6 @@
 
   #### 1.3.7. Further Research
   - Defining Methods on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#Defining_methods
-
   - 'this' in Methods: https://javascript.info/object-methods#this-in-methods
   <br/><br/>
 
@@ -764,31 +897,39 @@
   #### 1.4.1. Things that Belong to Objects
   Previously, we saw that the properties and methods contained inside an object belong to that object. Let s drive this home with one quick example:
 
-  <code>const chameleon = {<br/>
-    eyes: 2,<br/>
-    lookAround: function () {<br/>
-      console.log(`I see you with my ${this.eyes} eyes!`);<br/>
-    }<br/>
-  };<br/><br/>
+  ```
+  const chameleon = {
+    eyes: 2,
+    lookAround: function () {
+      console.log(`I see you with my ${this.eyes} eyes!`);
+    }
+  };
 
-  chameleon.lookAround();<br/>
-  // 'I see you with my 2 eyes!'</code>
+  chameleon.lookAround();
+  // 'I see you with my 2 eyes!'
+  ```
+  <br/>
 
   We ve already looked at how this inside a method refers to the object that the method was called on. Let s take a closer look at chameleon s lookAround() method.
 
-  <code>lookAround: function () {<br/>
-    console.log(`I see you with my ${this.eyes} eyes!`);<br/>
-  }</code>
+  ```
+  lookAround: function () {
+    console.log(`I see you with my ${this.eyes} eyes!`);
+  }
+  ```
 
   Inside the function body is the code this.eyes. Since the lookAround() method was called on the chameleon object as chameleon.lookAround();, the value of this is the chameleon 
   object itself! As such, this.eyes is the number 2, since it refers to the value of the chameleon object s eyes property.
 
   Now, let s check out a different example. What do you think will be the value of this inside the following code?
 
-  <code>function whoThis () {<br/>
-    this.trickyish = true<br/>
-  }<br/>
-  whoThis();</code>
+  ```
+  function whoThis () {
+    this.trickyish = true
+  }
+  whoThis();
+  ```
+  <br/>
 
   #### 1.4.2. Write your thoughts below
   What do you think will be the value of this inside the following code? Window object<br/>
@@ -798,29 +939,35 @@
   #### 1.4.3. this and Function Invocation
   Let s compare the code from the chameleon object with the whoThis() code.
 
-  <code>const chameleon = {<br/>
-    eyes: 2,<br/>
-    lookAround: function () {<br/>
-      console.log(`I see you with my ${this.eyes} eyes!`);<br/>
-    }<br/>
-  };<br/>
-  chameleon.lookAround();<br/><br/>
+  ```
+  const chameleon = {
+    eyes: 2,
+    lookAround: function () {
+      console.log(`I see you with my ${this.eyes} eyes!`);
+    }
+  };
+  chameleon.lookAround();
 
-  function whoThis () {<br/>
-    this.trickyish = true<br/>
-  }<br/>
-  whoThis();</code>
-  <br/><br/>
+  function whoThis () {
+    this.trickyish = true
+  }
+  whoThis();
+  ```
+  <br/>
 
   #### 1.4.4. this in the Function/Method
   Before we dive into how this all works, take a look at the use of this inside 
   both of these code snippets:
 
   // from the chameleon code:<br/>
-  ```console.log(`I see you with my ${this.eyes} eyes!`);```
+  ```
+  console.log(`I see you with my ${this.eyes} eyes!`);
+  ```
 
   // from the whoThis() code:<br/>
-  ```this.trickyish = true```
+  ```
+  this.trickyish = true
+  ```
 
   There is some other code around them, but both of them have the format _this.<some-identifier<some-identifier>>_. For our purposes of discovering the value of this, it does not
   matter that in the chameleon code, we re using this to retrieve a property, while in the whoThis() code, we re using this to set a property.
@@ -831,12 +978,16 @@
   #### 1.4.5. Compare the Structures of the Function/Method
   Now, I want you to pay attention to the differences in structure of how the two snippets of code are invoked. The lookAround() code is a method because it belongs to an object. Since it s a method, it s invoked as a property on the chameleon object:
 
-  ```chameleon.lookAround();```
+  ```
+  chameleon.lookAround();
+  ```
 
   Now compare that with the whoThis() code. whoThis() is not a method; it's a plain, old, 
   regular function. And look at how the whoThis() function is invoked:
 
-  ```whoThis();```
+  ```
+  whoThis();
+  ```
 
   Just like every normal function is invoked; it's just the name of the function and the parentheses (there s no object and no dot in front of it).
   <br/><br/>
@@ -847,21 +998,20 @@
 
   Because .lookAround() is invoked as a method, the value of this inside of .lookAround() is whatever is left of the dot at invocation. Since the invocation looks like:
 
-  ```chameleon.lookAround();```
+  ```
+  chameleon.lookAround();
+  ```
 
   The chameleon object is left of the dot. Therefore, inside the .lookAround() method, this will refer to the chameleon object!
 
   Now let s compare that with the whoThis() function. Since it is called as a regular function (i.e., not called as an method on an object), its invocation looks like:
 
-  ```whoThis();```
+  ```
+  whoThis();
+  ```
 
-  Well, there is no dot. And there is no object left of the dot. So what is the value 
-  of this inside the whoThis() function? This is an interesting part of the JavaScript 
-  language.
-
+  Well, there is no dot. And there is no object left of the dot. So what is the value of this inside the whoThis() function? This is an interesting part of the JavaScript language.
   When a regular function is invoked, the value of this is the global window object.
-
-  Let's see it all in action!
   <br/><br/>
 
   #### 1.4.7. The window Object
@@ -876,14 +1026,17 @@
   pixels down from the current location)
   - Opening a new web page (window.open("https://www.udacity.com/");)
 
-  <code>const car = {<br/>
-    numberOfDoors: 4,<br/>
-    drive: function () {<br/>
-      console.log(`Get in one of the ${this.numberOfDoors} doors, and let s go!`);<br/>
-    }<br/>
-  };<br/>
-  const letsRoll = car.drive;<br/>
-  letsRoll();</code>
+  ```
+  const car = {
+    numberOfDoors: 4,
+    drive: function () {
+      console.log(`Get in one of the ${this.numberOfDoors} doors, and let s go!`);
+    }
+  };
+  const letsRoll = car.drive;
+  letsRoll();
+  ```
+  <br/>
 
   What does you think this refers to in the code above? The window object
   <br/><br/>
@@ -894,10 +1047,12 @@
 
   Here we can see that the currentlyEating variable is set to 'ice cream'. Then, we immediately see that the window now has a currentlyEating property! Checking this property against the currentlyEating variable shows us that they are identical.
 
-  <code>var currentlyEating = 'ice cream';<br/>
-  window.currentlyEating === currentlyEating<br/>
-  // true</code>
-  <br/><br/>
+  ```
+  var currentlyEating = 'ice cream';
+  window.currentlyEating === currentlyEating
+  // true
+  ```
+  <br/>
 
   #### 1.4.9. Globals and var, let, and const
   The keywords var, let, and const are used to declare variables in JavaScript. var has been around since the beginning of the language, while let and const are significantly newer additions (added in ES6).
@@ -905,36 +1060,43 @@
   Only declaring variables with the var keyword will add them to the window object. If you declare a variable outside of a function with either let or const, it will not be added as 
   a property to the window object.
 
-  <code>let currentlyEating = 'ice cream';<br/>
-  window.currentlyEating === currentlyEating<br/>
-  // false!</code>
-  <br/><br/>
+  ```
+  let currentlyEating = 'ice cream';
+  window.currentlyEating === currentlyEating
+  // false!
+  ```
+  <br/>
 
   #### 1.4.10. Global Functions are Methods on window
   Similarly to how global variables are accessible as properties on the window object, any global function declarations are accessible on the window object as methods:
 
-  <code>function learnSomethingNew() {<br/>
-    window.open('https://www.udacity.com/');<br/>
-  }<br/><br/>
+  ```
+  function learnSomethingNew() {
+    window.open('https://www.udacity.com/');
+  }
 
-  window.learnSomethingNew === learnSomethingNew<br/>
-  // true</code>
+  window.learnSomethingNew === learnSomethingNew
+  // true
+  ```
+  <br/>
 
   Declaring the learnSomethingNew() function as a global function declaration (i.e., it s globally accessible and not written inside another function) makes it accessible to your code as either learnSomethingNew() or window.learnSomethingNew().
 
   Which of the following variables and functions will be available on the window object?
 
-  <code>var iceCreamEaten = 1;<br/><br/>
+  ```
+  var iceCreamEaten = 1;
 
-  function consume (numberOfGallons) {<br/>
-    var result = iceCreamEaten + numberOfGallons;<br/>
-    function updateTotals (newTotal) {<br/>
-      iceCreamEaten = result;<br/>
-    }<br/>
-    updateTotals();<br/>
-  }<br/>
-  consume(3);</code>
-  <br/><br/>
+  function consume (numberOfGallons) {
+    var result = iceCreamEaten + numberOfGallons;
+    function updateTotals (newTotal) {
+      iceCreamEaten = result;
+    }
+    updateTotals();
+  }
+  consume(3);
+  ```
+  <br/>
 
   #### 1.4.11. Avoid Globals
   We ve seen that declaring global variables and functions add them as properties to the window object. Globally-accessible code sounds like something that might be super helpful, right? I mean, wouldn t it be great if you could always be within arms reach of some ice cream (or is that just my lifelong dream)?<br/><br/>
@@ -948,10 +1110,13 @@
   Tight coupling is a phrase that developers use to indicate code that is too dependent on the details of each other. The word "coupling" means the "pairing of two items together.
   " In tight coupling, pieces of code are joined together in a way where changing one unintentionally alters the functioning of some other code:
 
-  <code>var instructor = 'Richard';<br/>
-  function richardSaysHi() {<br/>
-    console.log(`${instructor} says 'hi!'`);<br/>
-  }</code>
+  ```
+  var instructor = 'Richard';
+  function richardSaysHi() {
+    console.log(`${instructor} says 'hi!'`);
+  }
+  ```
+  <br/>
 
   In the code above, note that the instructor variable is declared globally. 
   The richardSaysHi() function does not have a local variable that it uses to store the instructor's name. Instead, it reaches out to the global variable and uses that. 
@@ -964,26 +1129,29 @@
 
   Let s look at an example of name collision with this DOM manipulation code:
 
-  <code>let counter = 1;<br/>
-  function addDivToHeader () {<br/>
-    const newDiv = document.createElement('div');<br/>
-    newDiv.textContent = 'div number ' + counter;<br/><br/>
+  ```
+  let counter = 1;
+  function addDivToHeader () {
+    const newDiv = document.createElement('div');
+    newDiv.textContent = 'div number ' + counter;
 
-    counter = counter + 1;<br/><br/>
+    counter = counter + 1;
 
-    const headerSection = document.querySelector('header');<br/>
-    headerSection.appendChild(newDiv)<br/>
-  }<br/><br/>
+    const headerSection = document.querySelector('header');
+    headerSection.appendChild(newDiv)
+  }
 
-  function addDivToFooter() {<br/>
-    const newDiv = document.createElement('div');<br/>
-    newDiv.textContent = 'div number ' + counter;<br/><br/>
+  function addDivToFooter() {
+    const newDiv = document.createElement('div');
+    newDiv.textContent = 'div number ' + counter;
 
-    counter = counter + 1;<br/><br/>
+    counter = counter + 1;
 
-    const headerSection = document.querySelector('footer');<br/>
-    headerSection.appendChild(newDiv)<br/>
-  }</code>
+    const headerSection = document.querySelector('footer');
+    headerSection.appendChild(newDiv)
+  }
+  ```
+  <br/>
 
   In this code, we have an addDivToHeader() function and a addDivToFooter() function. 
   Both of these functions create a \<div> element and increment a counter variable.
@@ -994,10 +1162,13 @@
   Since both functions increment the counter variable, if the code alternates between calling addDivToHeader() and addDivToFooter(), then their respective \<div>'s will not 
   have numerically ascending numbers. For example, if we had the following calls:
 
-  <code>addDivToHeader();<br/>
-  addDivToHeader();<br/>
-  addDivToFooter();<br/>
-  addDivToHeader();</code>
+  ```
+  addDivToHeader();
+  addDivToHeader();
+  addDivToFooter();
+  addDivToHeader();
+  ```
+  <br/>
 
   The developer probably wanted the \<header> to have three \<div> elements with the numbers 1, 2, and 3 and the \<footer> element to have a single \<div> with the number 1. However,   what this code will produce is a \<header> element with three \<div> but with the numbers 1, 2, and 4 (not 3) and a \<footer> element with the number 3...these are very different results. But it s happening because both functions depend on the counter variable and both update it.<br/>
 
@@ -1026,53 +1197,63 @@
   #### 1.5.1. Object Methods
   Do you remember earlier when we used the Object() constructor function to create (i.e., instantiate) new objects with the new keyword?
 
-  ```const myNewFancyObject = new Object();```
+  ```
+  const myNewFancyObject = new Object();
+  ```
+  <br/>
 
   The Object() function actually includes a few methods of its own to aid in the development of your applications. These methods are:
 
-  <code>Object.keys()<br/>
-  Object.values()</code>
+  ```
+  Object.keys()
+  Object.values()
+  ```
+  <br/>
 
   Whether you re building logic in your code, or just writing a utility "helper" function, feel free to use these methods as necessary. Let s see how each of these work!
 
-  <code>let array = ['a', 'b', 'c', 'd', 'e'];<br/>
-  console.log(Object.keys(array), Object.values(array));<br/>
-  // [ '0', '1', '2', '3', '4' ] [ 'a', 'b', 'c', 'd', 'e' ]<br/><br/>
+  ```
+  let array = ['a', 'b', 'c', 'd', 'e'];
+  console.log(Object.keys(array), Object.values(array));
+  // [ '0', '1', '2', '3', '4' ] [ 'a', 'b', 'c', 'd', 'e' ]
 
-  let object = {<br/>
-    key1: 'value1',<br/>
-    key2: 'value2',<br/>
-    key3: 'value3',<br/>
-    key4: 'value4'<br/>
-  };<br/><br/>
+  let object = {
+    key1: 'value1',
+    key2: 'value2',
+    key3: 'value3',
+    key4: 'value4'
+  };
 
-  console.log(Object.keys(object), Object.values(object));<br/>
-  // [ 'key1', 'key2', 'key3', 'key4' ] [ 'value1', 'value2', 'value3', 'value4' ]<br/><br/>
+  console.log(Object.keys(object), Object.values(object));
+  // [ 'key1', 'key2', 'key3', 'key4' ] [ 'value1', 'value2', 'value3', 'value4' ]<br/>
 
-  let object2 = {<br/>
-    key1: {<br/>
-        subkey1: 'subvalue1',<br/>
-        subkey2: 'subvalue2'<br/>
-    },<br/>
-    key2: 'value2',<br/>
-    key3: 'value3',<br/>
-    key4: 'value4'<br/>
-  };<br/><br/>
+  let object2 = {
+    key1: {
+        subkey1: 'subvalue1',
+        subkey2: 'subvalue2'
+    },
+    key2: 'value2',
+    key3: 'value3',
+    key4: 'value4'
+  };
 
-  console.log(Object.keys(object2), Object.values(object2));<br/>
+  console.log(Object.keys(object2), Object.values(object2));
   // [ 'key1', 'key2', 'key3', 'key4' ] [{ subkey1: 'subvalue1', subkey2: 'subvalue2' }, 'value2', 'value3', 'value4']
-  </code>
+  ```
   <br/><br/>
 
   #### 1.5.2. Object.keys() and Object.values()
   At its core, an object is just a collection of key/value pairs. What if we want to extract only the keys from an object? Say we have this object representing a real-life dictionary:
 
-  <code>const dictionary = {<br/>
-    car: 'automobile',<br/>
-    apple: 'healthy snack',<br/>
-    cat: 'cute furry animal',<br/>
-    dog: 'best friend'<br/>
-  };</code>
+  ```
+  const dictionary = {
+    car: 'automobile',
+    apple: 'healthy snack',
+    cat: 'cute furry animal',
+    dog: 'best friend'
+  };
+  ```
+  <br/>
 
   Having a collection of just the words (i.e., the dictionary object s keys) may be particularly 
   useful. While we could use a for...in loop to iterate through an object and build our own list 
@@ -1082,13 +1263,18 @@
   When Object.keys() is given an object, it extracts just the keys of that object, then returns 
   those keys in an array:
 
-  <code>Object.keys(dictionary);<br/>
-  // ['car', 'apple', 'cat', 'dog']</code>
+  ```
+  Object.keys(dictionary);
+  // ['car', 'apple', 'cat', 'dog']
+  ```
+  <br/>
 
   So Object.keys() gives returns an array of the provided object s property names. Likewise, if we want a list of the values of an object, we can use Object.values():
 
-  <code>Object.values(dictionary);<br/>
-  // ['automobile', 'healthy snack', 'cute furry animal', 'best friend']</code>
+  ```
+  Object.values(dictionary);
+  // ['automobile', 'healthy snack', 'cute furry animal', 'best friend']
+  ```
   <br/><br/>
 
   #### 1.5.3. Support for Object.keys() and Object.values()
