@@ -39,6 +39,7 @@
   #### 3.1.4. Ejercicio
   Mirar objetos alrededor y ver cómo sería mejor clasificarlos y agruparlos.
 
+  ```
   Decoración:
     Cuadros
     Lámapara
@@ -70,6 +71,8 @@
   Dispositivos electrónicos:
     Compu
     Celu
+  ```
+  <br/>
 
   #### 3.1.5. Summary
   Los objetos en JS representan cosas de la realidad. 
