@@ -23,9 +23,11 @@
 
   If we want to retrieve the first (left-most) element in fruits, we access that element by its index:
 
-  <code>fruits[0];
-  // 'apple'</code>
-  <br/><br/>
+  ```
+  fruits[0];
+  // 'apple'
+  ```
+  <br/>
 
   Likewise, this is how we can access the last (right-most) element in fruits:
 
@@ -33,21 +35,24 @@
   // 'lychee'</code>
   <br/><br/>
 
-#### 1.1.2. Objects
- <hr />
+  #### 1.1.2. Objects
   Fundamentally, an object is a collection of associated key/value pairs. We create an object with curly brackets (i.e., { and }). Here s a variable called myObject, which is assigned to an empty object:
 
-  ```const myObject = {};```
-  <br/><br/>
+  ```
+  const myObject = {};
+  ```
+  <br/>
 
   While elements in arrays are referenced by a numeric index, keys in an object must be named explicitly, like color or year. Check out the following example:
 
-  <code>const car = {<br/>
-    color: 'red',<br/>
-    year: 1992,<br/>
-    isPreOwned: true<br/>
-  };</code>
-  <br/><br/>
+  ```
+  const car = {
+    color: 'red',
+    year: 1992,
+    isPreOwned: true
+  };
+  ```
+  <br/>
 
   Let's break this down and see what s going on:
   - The variable that is assigned to the object is named car.
@@ -59,22 +64,25 @@
 
   Unlike arrays, objects are unordered collections. For example, the car object above could be written with the key/value pairs in a different order, and it wouldn't change how you d access car s items:
 
-  <code>const car = {<br/>
-    isPreOwned: true,<br/>
-    color: 'red',<br/>
-    year: 1992<br/>
-  };</code>
-  <br/><br/>
+  ```
+  const car = {
+    isPreOwned: true,
+    color: 'red',
+    year: 1992
+  };
+  ```
+  <br/>
 
   #### 1.1.3. Object property syntax
-  <hr />
   Another thing to note is that keys (i.e., the names of the object s properties) are strings, but quotation marks surrounding these strings are optional as long as the string is also a valid Javascript identifier (i.e., you could use it as a variable name or function name). 
   As a result, the following three objects are equivalent:
 
-  <code>const course = { courseId: 711 };   // ← no quotes around the courseId key<br/>
-  const course = { 'courseId': 711 };       // ← single quotes around the courseId key<br/>
-  const course = { "courseId": 711 };       // ← double quotes around the courseId key</code>
-  <br/><br/>
+  ```
+  const course = { courseId: 711 };   // ← no quotes around the courseId key
+  const course = { 'courseId': 711 };       // ← single quotes around the courseId key
+  const course = { "courseId": 711 };       // ← double quotes around the courseId key
+  ```
+  <br/>
 
   You'll commonly find quotation marks omitted from property names. Certain situations require them to be included, especially if the property name:
   - Is a reserved word (e.g., for, if, let, true, etc.).
@@ -87,24 +95,33 @@
 
   First, Ruby hashes and JavaScript objects have similar functionality: they are both collections of values accessible by keys. However, values are accessed in Ruby hashes a bit differently. Consider the following Ruby hash:
 
-  <code>book = {<br/>
-    title: 'To Kill a Mockingbird',<br/>
-    author: 'Harper Lee',<br/>
-    published: 1960<br/>
-  }</code>
+  ```
+    book = {
+    title: 'To Kill a Mockingbird',
+    author: 'Harper Lee',
+    published: 1960
+  }
+  ```
+  <br/>
 
   Because the hash keys are symbols (rather than strings), properties are accessed _by_ that symbol:
 
-  <code>book[:title]<br/>
-  #'To Kill a Mockingbird'</code>
+  ```
+  book[:title]
+  #'To Kill a Mockingbird'
+  ```
+  <br/>
 
   Any attempts to using JavaScript s dot notation or square bracket notation lead to undesirable results:
 
-  <code>book.title<br/>
-  #undefined method `title' for #<Hash> (NoMethodError)</code>
-
-  <code>book['title']<br/>
-  #nil</code>
+  ```
+  book.title
+  #undefined method `title' for #<Hash> (NoMethodError)
+  
+  <code>book['title']
+  #nil
+  ```
+  <br/>
 
   Another major difference between Ruby hashes and JavaScript objects are that objects can take a function as a property value (we ll take a deep dive into this in the next section). This functionality does not exist for Ruby hashes!
 
