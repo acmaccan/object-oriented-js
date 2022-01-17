@@ -14,7 +14,8 @@
 
   ```const fruits = ['apple', 'banana', 'orange', 'grape', 'lychee'];
   console.log(fruits);
-  // ['apple', 'banana', 'orange', 'grape', 'lychee'];```
+  // ['apple', 'banana', 'orange', 'grape', 'lychee'];
+  ```
   <br/><br/>
 
   If we want to retrieve the first (left-most) element in fruits, we access that element by its index:
