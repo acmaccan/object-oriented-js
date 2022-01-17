@@ -443,6 +443,7 @@
 
   El scope chain en este caso podemos verlo moverse hacia afuera desde el nivel más anidado. three(), two(), one() y window y de esta manera three() puede acceder a todas las variables, no sólo dentro de one() y two(), sino cualquier función global definida fuera de one().
 
+  ```
     ╔═════════════════════╗
     ║ Child               ║  
     ║ ╔═════════════════╗ ║
@@ -462,7 +463,9 @@
   Is the variable defined in the global environment? → Value is retrieved
                       ↓
                   Undefined
-
+  ```
+  <br/>
+  
   #### 2.4.5. The Global (window) Object
   Recordar que apps JS corren dentro de un ambiente host, por ej. un browser, el host provee un window object,  también conocido como objeto global. Cualquier variable global declarada es accedida como propiedad de este objeto, que representa el nivel más externo de la scope chain.
 
